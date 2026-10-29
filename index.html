@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elurevia | Haute Curated Experiences & Bespoke Event Management</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-dark: #090b0d;
+      --bg-surface: #111418;
+      --bg-card: rgba(18, 22, 28, 0.7);
+      --border-subtle: rgba(212, 175, 55, 0.18);
+      --border-hover: rgba(212, 175, 55, 0.5);
+      
+      --gold-primary: #d4af37;
+      --gold-light: #f5e8be;
+      --gold-dark: #967a21;
+      --gold-gradient: linear-gradient(135deg, #f8e5b4 0%, #d4af37 50%, #8c6d17 100%);
+      
+      --text-main: #f3f5f8;
+      --text-muted: #959ea9;
+      --text-dim: #5c6470;
+      
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --container-width: 1220px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-color: var(--bg-dark);
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold-dark);
+      border-radius: 3px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+
+    .gold-gradient-text {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 0.8rem;
+      display: inline-block;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 4px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 3rem auto;
+      font-size: 1rem;
+    }
+
+    .text-center { text-align: center; }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #0b0d10;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      border: 1px solid var(--gold-light);
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+      transition: var(--transition-smooth);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-main);
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      border: 1px solid var(--border-hover);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    section {
+      padding: 7rem 0;
+      position: relative;
+    }
+
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: var(--transition-smooth);
+    }
+    .glass-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    /* NAVIGATION */
+    .nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(9, 11, 13, 0.85);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.95rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo span {
+      color: var(--gold-primary);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: var(--transition-smooth);
+    }
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+    .mobile-toggle {
+      display: none;
+      font-size: 1.4rem;
+      color: var(--gold-primary);
+      cursor: pointer;
+    }
+
+    /* 3D PERSPECTIVE HERO */
+    .hero-perspective-wrapper {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 40%, rgba(15, 35, 27, 0.45) 0%, rgba(9, 11, 13, 0.98) 75%);
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .spatial-grid-floor {
+      position: absolute;
+      bottom: -15%;
+      left: -20%;
+      width: 140%;
+      height: 60%;
+      background: 
+        linear-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      transform: rotateX(75deg);
+      transform-origin: center bottom;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.6;
+      mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+    }
+
+    .spatial-orbit-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 650px;
+      height: 650px;
+      margin-top: -325px;
+      margin-left: -325px;
+      border: 1px dashed rgba(212, 175, 55, 0.22);
+      border-radius: 50%;
+      transform: rotateX(68deg) rotateY(15deg);
+      pointer-events: none;
+      z-index: 1;
+      animation: spinSpatial 35s linear infinite;
+    }
+
+    @keyframes spinSpatial {
+      from { transform: rotateX(68deg) rotateY(15deg) rotateZ(0deg); }
+      to { transform: rotateX(68deg) rotateY(15deg) rotateZ(360deg); }
+    }
+
+    .hero-interactive-stage {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 3rem 1.5rem;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.3rem;
+      border-radius: 40px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: 4.6rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2.5rem auto;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+    }
+
+    .stat-item h3 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .stat-item p {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.8rem;
+    }
+    .service-card {
+      padding: 2.5rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card:hover::before {
+      opacity: 1;
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+    }
+    .service-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* METHODOLOGY */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .process-card {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .process-num {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--gold-primary);
+      font-weight: 600;
+      line-height: 1;
+    }
+    .process-card h4 {
+      margin: 0.8rem 0 0.4rem 0;
+      font-size: 1.15rem;
+    }
+    .process-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ESTIMATOR */
+    .estimator-container {
+      background: linear-gradient(145deg, rgba(18, 23, 29, 0.85) 0%, rgba(10, 14, 18, 0.95) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3rem;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    }
+    .form-group-block {
+      margin-bottom: 2rem;
+    }
+    .form-group-block label {
+      display: block;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      margin-bottom: 0.8rem;
+    }
+    .pill-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .pill-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.82rem;
+      transition: var(--transition-smooth);
+    }
+    .pill-btn.active, .pill-btn:hover {
+      background: var(--gold-primary);
+      color: #0b0d10;
+      border-color: var(--gold-light);
+      font-weight: 600;
+    }
+    .range-wrap {
+      position: relative;
+      margin-top: 1rem;
+    }
+    .custom-range {
+      width: 100%;
+      height: 6px;
+      -webkit-appearance: none;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      outline: none;
+    }
+    .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      background: var(--gold-primary);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+      transition: 0.2s;
+    }
+    .range-val-badge {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+    }
+    .addon-check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    .addon-box {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+    }
+    .addon-box input {
+      accent-color: var(--gold-primary);
+    }
+    .addon-box.selected {
+      border-color: var(--gold-primary);
+      color: #fff;
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .estimator-summary-card {
+      background: rgba(10, 12, 15, 0.9);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius-md);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+    .est-header span {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+    }
+    .cost-display {
+      margin: 1.8rem 0;
+    }
+    .cost-display .amt-inr {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .cost-display .amt-subtext {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+      letter-spacing: 0.05em;
+    }
+    .breakdown-list {
+      list-style: none;
+      text-align: left;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    .breakdown-list li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PORTFOLIO */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .portfolio-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 380px;
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+    .portfolio-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10,12,14,0.1) 20%, rgba(10,12,14,0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+      transition: var(--transition-smooth);
+    }
+    .portfolio-card:hover .portfolio-img {
+      transform: scale(1.06);
+    }
+    .portfolio-overlay h4 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .portfolio-overlay span {
+      font-size: 0.8rem;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* LEADERSHIP ARCHITECTURE (NO PHOTOS - CLEAN TYPOGRAPHIC CARDS) */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .leader-card {
+      padding: 3rem 2.2rem;
+      text-align: center;
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(180deg, rgba(22, 27, 34, 0.85) 0%, rgba(14, 18, 22, 0.95) 100%);
+    }
+    .leader-crest {
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--gold-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto;
+      color: var(--gold-primary);
+      font-size: 1.1rem;
+      background: rgba(212, 175, 55, 0.05);
+    }
+    .leader-name {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+    .leader-role {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      font-weight: 600;
+    }
+    .leader-bio {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* CONTACT SECTION */
+    .inquiry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
+    }
+    .inquiry-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+      color: var(--text-muted);
+    }
+    .inquiry-contact-item i {
+      color: var(--gold-primary);
+      font-size: 1.3rem;
+      width: 25px;
+    }
+    .form-wrapper {
+      padding: 2.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-input-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-input-group label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(10, 12, 15, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      color: #fff;
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: var(--transition-smooth);
+    }
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      background: rgba(15, 18, 22, 0.95);
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      padding: 0.8rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+      color: #fff;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #14181c;
+      border: 1px solid var(--gold-primary);
+      padding: 1rem 1.8rem;
+      border-radius: var(--radius-md);
+      color: #fff;
+      display: none;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      z-index: 3000;
+    }
+    .toast.active {
+      display: flex;
+      animation: toastIn 0.3s forwards;
+    }
+    @keyframes toastIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal.active { display: flex; }
+    .modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-hover);
+      max-width: 750px;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      z-index: 10;
+    }
+    .modal-content-inner { padding: 2.2rem; }
+    .modal-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #07080a;
+      border-top: 1px solid var(--border-subtle);
+      padding: 4.5rem 0 2rem 0;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand h2 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+    .footer-col h5 {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+      font-size: 0.85rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 992px) {
+      .estimator-container { grid-template-columns: 1fr; }
+      .inquiry-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 3.4rem; }
+    }
+    @media (max-width: 768px) {
+      .mobile-toggle { display: block; }
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-surface);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.35s ease;
+      }
+      .nav-links.active { left: 0; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.6rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .addon-check-grid { grid-template-columns: 1fr; }
+      .spatial-orbit-ring { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">ELUREVIA<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Methodology</a></li>
+        <li><a href="#estimator">Estimator</a></li>
+        <li><a href="#portfolio">Archives</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact" class="btn-gold">Consult Atelier</a></li>
+      </ul>
+      <div class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3D INTERACTIVE HERO STAGE -->
+  <div class="hero-perspective-wrapper" id="heroWrapper">
+    <canvas id="hero-canvas"></canvas>
+    <div class="spatial-grid-floor"></div>
+    <div class="spatial-orbit-ring"></div>
+    
+    <div class="hero-interactive-stage" id="heroStage">
+      <div class="hero-badge">
+        <i class="fa-solid fa-cube" style="color:var(--gold-primary)"></i> Spatial Architecture of Memories
+      </div>
+      <h1>Where Extravagance Meets <span class="gold-gradient-text">Impeccable Precision</span>.</h1>
+      <p>Elurevia is a high-concept event architecture house. We orchestrate royal weddings, private summits, and high-fashion galas across the globe with unmatched sophistication.</p>
+      <div class="hero-actions">
+        <a href="#estimator" class="btn-gold"><i class="fa-solid fa-calculator"></i> Design Your Scope</a>
+        <a href="#portfolio" class="btn-outline">Explore Archives</a>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>140+</h3>
+          <p>Global Events Curated</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Bespoke Architectures</p>
+        </div>
+        <div class="stat-item">
+          <h3>18</h3>
+          <p>Destination Capitols</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Haute Event Services</span>
+        <h2 class="section-title">The Quintessence of Execution</h2>
+        <p class="section-subtitle">From monumental destination estates to exclusive private soirees, every production is customized to reflect discerning taste.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="glass-card service-card">
+          <i class="fa-solid fa-gem service-icon"></i>
+          <h3>Monumental Weddings</h3>
+          <p>Multi-day destination nuptials crafted with ancestral grandeur, custom thematic pavilions, and seamless royal guest concierges.</p>
+        </div>
+
+        <div class="glass-card service-card">
+          <i class="fa-solid fa-crown service-icon"></i>
+          <h3>VVIP & Sovereign Galas</h3>
+          <p>High-security private celebrations, milestone anniversaries, and red-carpet gatherings orchestrated with privacy and discreet excellence.</p>
+        </div>
+
+        <div class="glass-card service-card">
+          <i class="fa-solid fa-building-columns service-icon"></i>
+          <h3>Corporate Summits</h3>
+          <p>Dynamic brand product unboxings, international venture keynotes, and immersive sensory atmospheres for premier innovators.</p>
+        </div>
+
+        <div class="glass-card service-card">
+          <i class="fa-solid fa-champagne-glasses service-icon"></i>
+          <h3>Ephemeral Soirees</h3>
+          <p>Intimate villa gatherings, secret acoustic dinners, and bespoke fashion showcases infused with Michelin-starred culinary stories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="process" style="background: rgba(14, 18, 22, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Methodology</span>
+        <h2 class="section-title">The Five Stages of Perfection</h2>
+        <p class="section-subtitle">Every Elurevia production adheres to a strict five-tier blueprint to guarantee effortless, flawless delivery.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="glass-card process-card">
+          <span class="process-num">01</span>
+          <h4>Vision Brief</h4>
+          <p>Deep discovery consultation exploring spatial themes, guest demographics, and sensory ambitions.</p>
+        </div>
+        <div class="glass-card process-card">
+          <span class="process-num">02</span>
+          <h4>Spatial 3D Renders</h4>
+          <p>Photorealistic virtual walkthroughs, lighting cues, and customized architectural floor plan layouts.</p>
+        </div>
+        <div class="glass-card process-card">
+          <span class="process-num">03</span>
+          <h4>Artisan Sourcing</h4>
+          <p>Securing world-renowned culinary chefs, floral sculptors, technical crews, and international artists.</p>
+        </div>
+        <div class="glass-card process-card">
+          <span class="process-num">04</span>
+          <h4>Choreographed Run</h4>
+          <p>Minute-by-minute execution management, diplomatic protocol adherence, and live vendor synchronization.</p>
+        </div>
+        <div class="glass-card process-card">
+          <span class="process-num">05</span>
+          <h4>The Epilogue</h4>
+          <p>Archival cinematic film deliveries, personalized memory suites, and complete financial reconciliation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTIMATOR (INR) -->
+  <section id="estimator">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Interactive Planner</span>
+        <h2 class="section-title">Estimate Your Experience</h2>
+        <p class="section-subtitle">Configure your bespoke event scope in real time. Numbers represent calibrated production baselines in Indian Rupees (₹).</p>
+      </div>
+
+      <div class="estimator-container">
+        <div class="estimator-inputs">
+          <div class="form-group-block">
+            <label>1. Celebration Category</label>
+            <div class="pill-selector" id="catSelector">
+              <button type="button" class="pill-btn active" data-rate="25000">Destination Wedding</button>
+              <button type="button" class="pill-btn" data-rate="18000">Luxury Gala</button>
+              <button type="button" class="pill-btn" data-rate="14000">Corporate Summit</button>
+              <button type="button" class="pill-btn" data-rate="9000">Private Soiree</button>
+            </div>
+          </div>
+
+          <div class="form-group-block">
+            <label>2. Anticipated Guest List: <strong id="guestDisplay" style="color:var(--gold-light)">250 Guests</strong></label>
+            <div class="range-wrap">
+              <input type="range" class="custom-range" id="guestRange" min="20" max="1000" step="10" value="250">
+              <div class="range-val-badge">
+                <span>20 Intimate</span>
+                <span>500 Grand</span>
+                <span>1000+ Imperial</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group-block">
+            <label>3. Production Tier & Decor Concept</label>
+            <div class="pill-selector" id="tierSelector">
+              <button type="button" class="pill-btn" data-multiplier="1.0">Minimalist Chic</button>
+              <button type="button" class="pill-btn active" data-multiplier="1.5">Opulent Flora & Glass</button>
+              <button type="button" class="pill-btn" data-multiplier="2.2">Palatial Architectural</button>
+            </div>
+          </div>
+
+          <div class="form-group-block">
+            <label>4. Signature Add-ons</label>
+            <div class="addon-check-grid">
+              <label class="addon-box">
+                <input type="checkbox" class="addon-checkbox" value="150000"> Drone Light Choreography
+              </label>
+              <label class="addon-box">
+                <input type="checkbox" class="addon-checkbox" value="250000"> Michelin-Starred Curation
+              </label>
+              <label class="addon-box">
+                <input type="checkbox" class="addon-checkbox" value="400000"> International Artist / Band
+              </label>
+              <label class="addon-box">
+                <input type="checkbox" class="addon-checkbox" value="120000"> 3D Spatial Projection Mapping
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="estimator-summary-card">
+          <div class="est-header">
+            <span>Indicative Investment Range</span>
+            <div class="cost-display">
+              <div class="amt-inr" id="inrValue">₹ 24,50,000</div>
+              <div class="amt-subtext">Estimated Baseline Investment</div>
+            </div>
+          </div>
+
+          <ul class="breakdown-list">
+            <li>
+              <span>Hospitality & Logistics Baseline</span>
+              <span id="breakdownBase">₹ 14,00,000</span>
+            </li>
+            <li>
+              <span>Decor & Lighting Tier</span>
+              <span id="breakdownDecor">₹ 7,50,000</span>
+            </li>
+            <li>
+              <span>Selected Signature Elements</span>
+              <span id="breakdownAddons">₹ 0</span>
+            </li>
+          </ul>
+
+          <div>
+            <button class="btn-gold" style="width: 100%; justify-content: center;" id="lockEstimateBtn">
+              Reserve Date With This Brief <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <p style="font-size: 0.72rem; color: var(--text-dim); margin-top: 0.8rem;">
+              *Indicative quote in INR (₹). Subject to destination logistics and permits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO ARCHIVES -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Selected Works</span>
+        <h2 class="section-title">The Masterpiece Archives</h2>
+        <p class="section-subtitle">Glimpses into immersive realms conceived and realized by the Elurevia ateliers.</p>
+      </div>
+
+      <div class="portfolio-filters">
+        <button class="pill-btn active filter-btn" data-filter="all">All Productions</button>
+        <button class="pill-btn filter-btn" data-filter="weddings">Weddings</button>
+        <button class="pill-btn filter-btn" data-filter="corporate">Corporate</button>
+        <button class="pill-btn filter-btn" data-filter="soiree">Private Soirees</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card" data-category="weddings" data-title="The Crystal Mirage" data-guest="450 Guests" data-location="Udaipur, India" data-desc="A royal palace illuminated with over 20,000 crystal strands, custom suspended floral chandeliers, and private water barges.">
+          <img class="portfolio-img" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Crystal Mirage Wedding">
+          <div class="portfolio-overlay">
+            <span>Udaipur Palace Nuptials</span>
+            <h4>The Crystal Mirage</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="corporate" data-title="Hyperion AI Launch" data-guest="600 Delegates" data-location="Bengaluru, India" data-desc="A 360-degree LED dome keynote pavilion integrating holographic product launches and synchronized spatial audio.">
+          <img class="portfolio-img" src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80" alt="Hyperion Summit">
+          <div class="portfolio-overlay">
+            <span>Global Tech Keynote</span>
+            <h4>Hyperion AI Launch</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="soiree" data-title="Château Noir Nocturne" data-guest="85 Guests" data-location="Monaco Coast" data-desc="A multi-course gastronomic feast featuring world-renowned acoustic cellists and vintage mixology stations on a private cliffside terrace.">
+          <img class="portfolio-img" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Chateau Dinner">
+          <div class="portfolio-overlay">
+            <span>Private Gala</span>
+            <h4>Château Noir Nocturne</h4>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="weddings" data-title="Elysian Emerald Meadows" data-guest="300 Guests" data-location="Tuscany, Italy" data-desc="An authentic olive grove conversion utilizing emerald silk canopies, hand-blown Venetian lanterns, and curated Italian tenors.">
+          <img class="portfolio-img" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Elysian Meadows">
+          <div class="portfolio-overlay">
+            <span>Tuscan Destination</span>
+            <h4>Elysian Emerald Meadows</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP (NO PHOTOS - CLEAN TYPOGRAPHIC CARDS) -->
+  <section id="leadership" style="border-top: 1px solid var(--border-subtle); background: rgba(12, 15, 19, 0.4);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag">Visionaries</span>
+        <h2 class="section-title">Leadership Behind The Craft</h2>
+        <p class="section-subtitle">Guiding Elurevia with a relentless pursuit of aesthetic precision and flawless execution.</p>
+      </div>
+
+      <div class="leadership-grid">
+        <!-- Founder -->
+        <div class="glass-card leader-card">
+          <div class="leader-crest">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h3 class="leader-name">Diganth S Gaddige</h3>
+          <span class="leader-role">Founder</span>
+          <p class="leader-bio">Directing the overarching creative architecture and spatial narrative of Elurevia, crafting grand bespoke experiences that redefine luxury event production.</p>
+        </div>
+
+        <!-- Co-Founder -->
+        <div class="glass-card leader-card">
+          <div class="leader-crest">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <h3 class="leader-name">Ujjwal</h3>
+          <span class="leader-role">Co-Founder</span>
+          <p class="leader-bio">Leading operational precision, technical vendor synchronization, and venue logistics to convert complex monumental concepts into seamless reality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION & CONTACT -->
+  <section id="contact" style="background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, rgba(10, 12, 14, 0.98) 70%);">
+    <div class="container">
+      <div class="inquiry-grid">
+        <div class="inquiry-info">
+          <span class="section-tag">Private Appointment</span>
+          <h2 class="section-title">Begin The Dialogue</h2>
+          <p style="color:var(--text-muted); margin-bottom: 2rem;">
+            We accept a restricted number of private commissions annually to guarantee single-minded focus for each client.
+          </p>
+          
+          <div class="inquiry-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Headquarters</strong>
+              <p>Bengaluru, Karnataka, India</p>
+            </div>
+          </div>
+          <div class="inquiry-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Direct Line & WhatsApp</strong>
+              <p>+91 8073529303</p>
+            </div>
+          </div>
+          <div class="inquiry-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Atelier Concierge</strong>
+              <p>concierge@elurevia.events</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card form-wrapper">
+          <form id="consultationForm">
+            <div class="form-row">
+              <div class="form-input-group">
+                <label>Your Name *</label>
+                <input type="text" class="form-control" id="formName" required placeholder="Full Name">
+              </div>
+              <div class="form-input-group">
+                <label>Email Address *</label>
+                <input type="email" class="form-control" id="formEmail" required placeholder="name@domain.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-input-group">
+                <label>Phone / WhatsApp *</label>
+                <input type="tel" class="form-control" id="formPhone" required placeholder="+91 ...">
+              </div>
+              <div class="form-input-group">
+                <label>Event Target Date</label>
+                <input type="date" class="form-control" id="formDate">
+              </div>
+            </div>
+
+            <div class="form-input-group">
+              <label>Event Concept & Scope Brief</label>
+              <textarea class="form-control" id="formNotes" rows="4" placeholder="Mention preferred locations, anticipated guest count, or decor visions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+              <i class="fa-regular fa-paper-plane"></i> Submit Private Consultation Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>ELUREVIA</h2>
+          <p>The definitive luxury event management & experimental spatial design atelier. Sculpting iconic moments across India & global destinations.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Portfolio</h5>
+          <ul>
+            <li><a href="#portfolio">Destination Nuptials</a></li>
+            <li><a href="#portfolio">Executive Galas</a></li>
+            <li><a href="#portfolio">Private Islands</a></li>
+            <li><a href="#portfolio">Catering Concepts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#leadership">Founders & Leadership</a></li>
+            <li><a href="#process">Our Methodology</a></li>
+            <li><a href="#services">Design Process</a></li>
+            <li><a href="#contact">Press & Inquiries</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Direct Contact</h5>
+          <ul>
+            <li><a href="tel:+918073529303">+91 8073529303</a></li>
+            <li><a href="mailto:concierge@elurevia.events">concierge@elurevia.events</a></li>
+            <li>Bengaluru, India</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elurevia Experiences Pvt. Ltd. Founded by Diganth S Gaddige & Co-Founded by Ujjwal.</p>
+        <p style="color:var(--text-dim)">Architected with bespoke perfection.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS & NOTIFICATIONS -->
+  <div class="modal" id="projectModal">
+    <div class="modal-box">
+      <i class="fa-solid fa-xmark modal-close" id="modalClose"></i>
+      <img id="modalImg" class="modal-img" src="" alt="Project Preview">
+      <div class="modal-content-inner">
+        <span class="section-tag" id="modalLocation">Location</span>
+        <h3 id="modalTitle" style="font-family: var(--font-serif); font-size: 2rem; margin: 0.4rem 0;">Project</h3>
+        <p id="modalDesc" style="color: var(--text-muted); margin: 0.8rem 0;"></p>
+        <div style="font-size: 0.85rem; color: var(--gold-primary); font-weight: 600;" id="modalGuestCount"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toastNotice">
+    <i class="fa-solid fa-circle-check" style="color: var(--gold-primary); font-size: 1.3rem;"></i>
+    <div>
+      <h5 style="margin: 0; font-size: 0.95rem;">Request Registered</h5>
+      <p style="margin: 0; font-size: 0.8rem; color: var(--text-muted);">The Atelier concierge will reach out within 12 hours.</p>
+    </div>
+  </div>
+
+  <!-- FLOATING VIP WHATSAPP -->
+  <a href="https://wa.me/918073529303?text=Hello%20Elurevia%20Atelier,%20I%20would%20like%20to%20discuss%20a%20private%20event%20commission%20with%20Diganth%20and%20Ujjwal." 
+     target="_blank" 
+     class="whatsapp-float" 
+     id="waFloatBtn">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>VIP Concierge</span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    /* 1. 3D Spatial Interactive Tilt on Hero Entry */
+    const heroWrapper = document.getElementById('heroWrapper');
+    const heroStage = document.getElementById('heroStage');
+
+    heroWrapper.addEventListener('mousemove', (e) => {
+      const rect = heroWrapper.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const tiltX = -(y / rect.height) * 16;
+      const tiltY = (x / rect.width) * 16;
+      
+      heroStage.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(30px)`;
+    });
+
+    heroWrapper.addEventListener('mouseleave', () => {
+      heroStage.style.transform = `rotateX(0deg) rotateY(0deg) translateZ(0px)`;
+    });
+
+    /* 2. Ambient Particles */
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+
+    function setCanvasDimensions() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    setCanvasDimensions();
+    window.addEventListener('resize', setCanvasDimensions);
+
+    class GoldParticle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.6;
+        this.speedX = (Math.random() - 0.5) * 0.35;
+        this.speedY = (Math.random() - 0.5) * 0.35;
+        this.opacity = Math.random() * 0.5 + 0.2;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+      draw() {
+        ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      const count = Math.floor((canvas.width * canvas.height) / 18000);
+      for (let i = 0; i < count; i++) {
+        particlesArray.push(new GoldParticle());
+      }
+    }
+    initParticles();
+
+    function renderParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particlesArray) {
+        p.update();
+        p.draw();
+      }
+      requestAnimationFrame(renderParticles);
+    }
+    renderParticles();
+
+    /* 3. Estimator Logic */
+    const catSelector = document.getElementById('catSelector');
+    const guestRange = document.getElementById('guestRange');
+    const guestDisplay = document.getElementById('guestDisplay');
+    const tierSelector = document.getElementById('tierSelector');
+    const addonCheckboxes = document.querySelectorAll('.addon-checkbox');
+
+    const inrValue = document.getElementById('inrValue');
+    const breakdownBase = document.getElementById('breakdownBase');
+    const breakdownDecor = document.getElementById('breakdownDecor');
+    const breakdownAddons = document.getElementById('breakdownAddons');
+    const lockEstimateBtn = document.getElementById('lockEstimateBtn');
+    const formNotes = document.getElementById('formNotes');
+
+    function calculateEstimate() {
+      const activeCat = catSelector.querySelector('.active');
+      const ratePerGuest = parseFloat(activeCat.getAttribute('data-rate'));
+      const guestCount = parseInt(guestRange.value);
+      guestDisplay.textContent = `${guestCount} Guests`;
+
+      const hospitalityBase = ratePerGuest * guestCount;
+
+      const activeTier = tierSelector.querySelector('.active');
+      const tierMult = parseFloat(activeTier.getAttribute('data-multiplier'));
+      const decorCost = Math.round(hospitalityBase * (0.45 * tierMult));
+
+      let addonsCost = 0;
+      addonCheckboxes.forEach(cb => {
+        const box = cb.closest('.addon-box');
+        if (cb.checked) {
+          addonsCost += parseFloat(cb.value);
+          box.classList.add('selected');
+        } else {
+          box.classList.remove('selected');
+        }
+      });
+
+      const totalINR = hospitalityBase + decorCost + addonsCost;
+
+      inrValue.textContent = '₹ ' + totalINR.toLocaleString('en-IN');
+      breakdownBase.textContent = '₹ ' + hospitalityBase.toLocaleString('en-IN');
+      breakdownDecor.textContent = '₹ ' + decorCost.toLocaleString('en-IN');
+      breakdownAddons.textContent = '₹ ' + addonsCost.toLocaleString('en-IN');
+    }
+
+    catSelector.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pill-btn')) {
+        catSelector.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        calculateEstimate();
+      }
+    });
+
+    tierSelector.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pill-btn')) {
+        tierSelector.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        calculateEstimate();
+      }
+    });
+
+    guestRange.addEventListener('input', calculateEstimate);
+    addonCheckboxes.forEach(cb => cb.addEventListener('change', calculateEstimate));
+
+    lockEstimateBtn.addEventListener('click', () => {
+      const activeCat = catSelector.querySelector('.active').innerText;
+      const guestCount = guestRange.value;
+      const activeTier = tierSelector.querySelector('.active').innerText;
+      const total = inrValue.innerText;
+
+      formNotes.value = `Selected Scope from Estimator:\n- Category: ${activeCat}\n- Estimated Guests: ${guestCount}\n- Production Tier: ${activeTier}\n- Indicative Estimate: ${total}\n\nAdditional wishes: `;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    calculateEstimate();
+
+    /* 4. Portfolio Filters & Modal */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLocation = document.getElementById('modalLocation');
+    const modalGuestCount = document.getElementById('modalGuestCount');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        portfolioCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    portfolioCards.forEach(card => {
+      card.addEventListener('click', () => {
+        modalTitle.textContent = card.getAttribute('data-title');
+        modalLocation.textContent = card.getAttribute('data-location');
+        modalDesc.textContent = card.getAttribute('data-desc');
+        modalGuestCount.textContent = `Scale: ${card.getAttribute('data-guest')}`;
+        modalImg.src = card.querySelector('img').src;
+        modal.classList.add('active');
+      });
+    });
+
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+
+    /* 5. Navigation & Form Submit */
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    const consultationForm = document.getElementById('consultationForm');
+    const toastNotice = document.getElementById('toastNotice');
+
+    consultationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      toastNotice.classList.add('active');
+      consultationForm.reset();
+
+      setTimeout(() => {
+        toastNotice.classList.remove('active');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
